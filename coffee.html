@@ -2,6 +2,7 @@
 <html>
 <head>
   <title>Hackbright Coffee Shop</title>
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 
   <!-- Bootstrap links -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
@@ -55,15 +56,27 @@
 
     // Set these variables to their DOM elements
 
-    const coffeeImage = document.querySelector('#coffee-image');
+    // const coffeeImage = document.querySelector('#coffee-image');
+    const coffeeImage = $('#coffee-image');
     
-    const revenueMessage = document.querySelector('#revenue');
-    coffeeImage.setAttribute('src', 'static/coffee_beans.jpg');
+    // const revenueMessage = document.querySelector('#revenue');
+    // const revenueMessage = $('#revenue');
 
-function makeCoffee() {
-    coffeeImage.setAttribute('src', ' static/coffee_mug.jpg');
+    // coffeeImage.setAttribute('src', 'static/coffee_beans.jpg');
+    $('#coffee-image').attr('src', 'static/coffee_beans.jpg');
+
+    function makeCoffee() {
+    coffeeImage.setAttribute('src', 'static/coffee_machine.jpg');
+     setTimeout(() => {
+        (coffeeImage.setAttribute('src', ' static/coffee_mug.jpg'));
+        }, 1500);
+
+     setTimeout(() => {
+        (coffeeImage.setAttribute('src', ' static/coffee_beans.jpg'));
+        }, 4000);
 }
 coffeeImage.addEventListener('click', makeCoffee);
+
 
     // use this JavaScript object in further study step
 
@@ -75,7 +88,7 @@ coffeeImage.addEventListener('click', makeCoffee);
     };
 
 
-  </script>
+</script>
 
 </body>
 </html>
